@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 4</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+    <div class="container bg-red mt-5 d-block">
+        <div class="row">
+            <button type="button" class="btn btn-secondary offset-sm-2 col-sm-6 my-5" onclick="date()">Show date</button>
+            <button type="button " class="btn btn-primary offset-sm-2 col-sm-6 my-5" onclick="time()"> Show Time</button>
+        </div>
+           
+            <div id="" class="contianer  text-center">
+                <strong><h1 id="outputarea"></h1></strong>
+            </div>
+    </div>
+    <script>
+                function date(){
+                    var now =new Date()
+                    var date=now.getDate()+"/"+now.getMonth()+"/"+now.getFullYear();
+                    document.getElementById("outputarea").innerHTML=`<div>
+                    Today date is :${date}
+                </div>`
+                }
+                function time(){
+                    var now =new Date()
+                    var time=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()
+                    document.getElementById("outputarea").innerHTML=`<div>
+                   now the time is :${time}
+                </div>`
+                }
+    </script>
+</body>
+</html>

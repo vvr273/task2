@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js task8</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <style>
+        #container {
+            background: linear-gradient(to bottom, rgb(244, 244, 156), rgb(255, 192, 250));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="registration" class="form-group row">
+        <div class="container w-100 px-3 justify-items-center col-sm-9 mx-auto" id="container">
+            <h1 class="text-primary text-center">Registration Form</h1>
+            <div class="input-group">
+                <label for="fname" class="form-label col-sm-3 col-form-label">First Name</label>
+                <input type="text" id="fname" class="form-control col-sm-5">
+            </div>
+            <div class="input-group">
+                <label for="lname" class="form-label col-sm-3 col-form-label">Last Name</label>
+                <input type="text" id="lname" class="form-control col-sm-5">
+            </div>
+            <div class="input-group">
+                <label for="email" class="form-label col-sm-3 col-form-label">Email</label>
+                <input type="email" id="email" class="form-control col-sm-5">
+            </div>
+            <div class="input-group">
+                <label for="password" class="form-label col-sm-3 col-form-label">Password</label>
+                <input type="password" id="password" class="form-control col-sm-5">
+                <span id="pass-error" class="text-danger"></span>
+            </div>
+            <div class="input-group">
+                <label for="repassword" class="form-label col-sm-3 col-form-label">Reenter Password</label>
+                <input type="password" id="repassword" class="form-control col-sm-5">
+                <span id="repass-error" class="text-danger offset-sm-1 row"></span>
+            </div>
+            <div class="input-group">
+                <label class="form-label col-sm-3 col-form-label">Gender</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="age" class="form-label col-sm-3 col-form-label">Age</label>
+                <input type="number" id="age" class="form-control col-sm-5">
+            </div>
+            <div class="input-group">
+                <label for="phone" class="form-label col-sm-3 col-form-label">Phone Number</label>
+                <input type="tel" id="phone" class="form-control col-sm-5">
+            </div>
+            <div class="input-group">
+                <label for="Address" class="form-label col-sm-3 col-form-label">Address</label>
+                <textarea id="Address" class="form-control col-sm-5"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="State" class="form-label col-sm-3 col-form-label">State</label>
+                <input type="text" id="State" class="form-control col-sm-5">
+            </div>
+            <div class="input-group">
+                <label for="country" class="form-label col-sm-3 col-form-label">Country</label>
+                <select id="country" class="form-select col-sm-5">
+                    <option value="none">Choose your country</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="China">China</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label class="form-label col-sm-3 col-form-label">Languages</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="english" value="english">
+                    <label class="form-check-label" for="english">English</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="kannada" value="kannada">
+                    <label class="form-check-label" for="kannada">Kannada</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="hindi" value="hindi">
+                    <label class="form-check-label" for="hindi">Hindi</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="telugu" value="telugu">
+                    <label class="form-check-label" for="telugu">Telugu</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="chinese" value="chinese">
+                    <label class="form-check-label" for="chinese">Chinese</label>
+                </div>
+            </div>
+            <div class="input-group ml-4">
+                <input class="form-check-input" type="checkbox" id="confirm" value="confirm">
+                <label for="confirm" class="form-check-label">Hereby I declare all the given details are true</label>
+            </div>
+            <div>
+                <h5>Log in to <a href="https://codemithra.com/" class="form-link text-decoration-none">Ethnus</a>Website</h5>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+    
+    <script>
+        document.getElementById('registration').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const pass = document.getElementById("password").value;
+            const repass = document.getElementById("repassword").value;
+            let passError = document.getElementById("pass-error");
+            let repassError = document.getElementById("repass-error");
+            
+            if (pass.length <= 3) {
+                passError.innerHTML = "Poor";
+            } else if (pass.length > 3 && pass.length <= 6) {
+                passError.innerHTML = "Good";
+            } else if (pass.length > 6) {
+                passError.innerHTML = "Strong";
+            }
+
+            if (pass !== repass) {
+                repassError.innerHTML = "Passwords do not match";
+            } else {
+                repassError.innerHTML = "";
+            }
+
+            // You can add further validation here and submit the form if all validations pass
+        });
+    </script>
+</body>
+</html>

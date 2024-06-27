@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js task 7</title>
+    <style>
+        #train {
+            position: relative;
+            left: 0;
+            width: 200px;
+        }
+        @keyframes moveTrain {
+            0% { left: 0; }
+            100% { left: 100%; }
+        }
+        .animation {
+            animation: moveTrain 5s linear infinite;
+        }
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="train" src="train.png" alt="Train">
+        <h2 class="text-primary text-center">Click the following buttons to handle animation</h2>
+        <div class="controls">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const train = document.getElementById('train');
+        const startButton = document.getElementById('start');
+        const stopButton = document.getElementById('stop');
+
+        startButton.addEventListener('click', () => {
+            train.classList.add('animation');
+        });
+
+        stopButton.addEventListener('click', () => {
+            train.classList.remove('animation');
+        });
+    </script>
+</body>
+</html>

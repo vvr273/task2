@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js task 1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Reverse a Number</h1>
+        <form id="reverseForm" class="form-group">
+            <div class="form-group row">
+                <label for="inputnumber" class="col-sm-4 col-form-label">Enter a number:</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" id="inputnumber" placeholder="Enter a number" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="submit" class="btn btn-primary">Reverse Number</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="reversedNumberResult" class="mt-4"></div>
+    </div>
+
+    <script>
+        document.getElementById("reverseForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let inputValue = document.getElementById("inputnumber").value.trim();
+            
+
+            let number = parseInt(inputValue);
+
+            
+         
+
+           
+            let reversedNumber = reverseNumber(number);
+
+            
+            displayResult(reversedNumber);
+        });
+
+        function reverseNumber(num) {
+            let reversed = 0;
+            while (num !== 0) {
+                let digit = num % 10;
+                reversed = reversed * 10 + digit;
+                num = Math.floor(num / 10);
+            }
+            return reversed;
+        }
+
+        function displayResult(result) {
+            document.getElementById("reversedNumberResult").innerHTML = `
+                <div class="alert alert-success" >
+                    Reversed Number: ${result}
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>

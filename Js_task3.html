@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 3
+
+    </title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container bg-light text-dark">
+        <form action="" class="form-group mt-3 bg-secondary">
+            <div class="row">
+                <div class="input-group row">
+                    <label for="" class="form-label col-sm-3 col-form-label offset-sm-2 mt-2">1st Number</label>
+                    <input type="number" name="" id="first" class="offset-sm-2 form-control col-sm-6 mx-2 my-2"
+                        required>
+                </div>
+                <div class="input-group row">
+                    <label for="" class="form-label col-sm-3 col-form-label offset-sm-2 mt-2">2nd Number</label>
+                    <input type="number" name="" id="second" class="offset-sm-2 form-control col-sm-6 mx-2 my-2"
+                        required>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <button type="button" class="btn btn-warning " onclick="multiply()">
+                    Mulitply
+                </button>
+                <button type="button" class="btn btn-danger " onclick="divide()">
+                    Divide
+                </button>
+            </div>
+        </form>
+        <div id="outputarea" ></div>
+
+        </div>
+        <script>
+            
+            function multiply(){
+            const firstinput = parseInt (document.getElementById("first").value)
+            const secondinput =parseInt(document.getElementById("second").value) 
+                
+                const multiresult = firstinput * secondinput
+                document.getElementById("outputarea").innerHTML = `
+                    <div class="alert alert-warning">
+                            multiplication Result:${multiresult}
+                    </div>
+            `
+            }
+           function divide(){
+            const firstinput = parseInt (document.getElementById("first").value)
+            const secondinput =parseInt(document.getElementById("second").value) 
+                
+               const divresult =firstinput / secondinput
+                document.getElementById("outputarea").innerHTML = `
+                    <div class="alert alert-warning">
+                           Division Result:${divresult}
+                    </div>
+            `
+            }
+
+        </script>
+</body>
+
+</html>

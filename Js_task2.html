@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 2</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="bg-secondary text-white pb-2 text-center">String Reverse</h1>
+        <form action="" class="form-group" id="reverseForm">
+            <div class="form-group row mt-3">
+                <label for="inputtext" class="form-label col-sm-4 offset-sm-1 col-form-label">Enter the String</label>
+                <input type="text" id="inputtext" class="form-control col-sm-5" placeholder="webmaster" required>
+                <div class="col-sm-4 offset-sm-3 mt-3">
+                    <button type="button" class="btn btn-primary btn-block" onclick="reverseAndDisplay()">Reverse</button>
+                </div>
+            </div>
+        </form>
+        <div class="outputtext text-center" id="outputtext">
+            <div class="alert alert-success text-center">
+                Reversed text:  retsambew
+            </div>`;
+        </div>
+    </div>
+    <script>
+        function reversed(inputString) {
+            return inputString.split("").reverse().join("");
+        }
+
+        function displaytext(revtext) {
+            document.getElementById("outputtext").innerHTML = `
+                <div class="alert alert-success">
+                    Reversed text: ${revtext}
+                </div>`;
+        }
+
+        function reverseAndDisplay() {
+            var inputString = document.getElementById("inputtext").value;
+            var revtext = reversed(inputString);
+            displaytext(revtext);
+        }
+    </script>
+</body>
+</html>

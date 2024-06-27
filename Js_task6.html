@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task6</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+    <form action="" class="row" id="loginForm">
+        <div class="container mt-5 bg-light col-sm-5 rounded">
+            <h1 class="text-center">Instagram</h1>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="user">
+                    🧑
+                </span>
+                <input type="text" id="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="user" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="lock">
+                    🔒
+                </span>
+                <input type="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="lock" required>
+            </div>
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+            </div>
+            <div class="input-group mt-3">
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember" class="form-label col-form-label">Remember me</label>
+                <a href="forgotpassword.html" class="form-link offset-sm-1 mt-2 ml-4 text-decoration-none">Forgot Password?</a>
+            </div>
+        </div>
+        
+    </form>
+    <div class="container">
+        <h6 class="text-center mt-3">Don't have an account! 
+            <a href="signup.htmtl">Sign up here</a>
+        </h6>
+    </div>
+    
+    <div class="loginfo" id="loginfo">
+        
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            let realuser1 = "vvr_273";
+            let realpass1 = "Vishnu*1234";
+            
+            if(username === realuser1 && password === realpass1){
+                document.getElementById("loginfo").innerHTML =
+                `<div class="container">
+                    <h1 class="alert alert-success text-center">Logged in successfully</h1>
+                </div>`;
+            } else {
+                document.getElementById("loginfo").innerHTML =
+                `<div class="container">
+                    <h1 class="alert alert-danger text-center">Wrong username or password</h1>
+                </div>`;
+            }
+        });
+    </script>
+</body>
+</html>
